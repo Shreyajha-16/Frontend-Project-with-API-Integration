@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" ng-app="loginApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Beautiful Login Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body ng-controller="LoginController">
+    <div class="login-page">
+      <!-- Background Decor Circles -->
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+
+      <!-- Login Box -->
+      <div class="container-box">
+        <div class="header">
+          <h1>Login</h1>
+          <p class="subheading">Please enter your details</p>
+        </div>
+
+        <!-- Login Form -->
+        <form ng-submit="login()">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              ng-model="user.username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              ng-model="user.password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="login-btn">Login</button>
+          </div>
+
+          <div class="form-group">
+            <p class="forgot-password"><a href="#">Forgot your password?</a></p>
+          </div>
+        </form>
+
+        <!-- Error Message (if any) -->
+        <div class="error" ng-show="errorMessage">
+          {{ errorMessage }}
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

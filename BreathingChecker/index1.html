@@ -1,0 +1,62 @@
+<!doctype html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Breathing Checker</title>
+   <link rel="stylesheet" href="style.css" />
+ </head>
+ <body>
+   <div class="container">
+
+     <header class="title">
+       <img src="elements/Designer (1).png" alt="" />
+       <h1>Breath<sub>Checker</sub></h1>
+       <img src="elements/mappls.jpeg" alt="" />
+     </header>
+     <aside class="sidebar">
+       <button class="dropdown-btn" onclick="toggleDropdown('lms-dropdown')">LMS</button>
+       <ul id="lms-dropdown" class="dropdown-list" style="display: none">
+         <li onclick="showDateInput('LMS COUNT'); fetchLMSCount()">LMS COUNT</li>
+         <li onclick="fetchLMSLast()">LMS LAST</li>
+       </ul>
+       <button class="dropdown-btn" onclick="toggleDropdown('fcm-dropdown')">FCM</button>
+       <ul id="fcm-dropdown" class="dropdown-list" style="display: none">
+         <li onclick="showDateInput('FCM COUNT'); fetchFCMCount()">FCM COUNT</li>
+         <li onclick="fetchFCMLast()">FCM LAST</li>
+       </ul>
+       <button class="dropdown-btn" onclick="toggleDropdown('other-dropdown')">Other</button>
+       <ul id="other-dropdown" class="dropdown-list" style="display: none">
+         <li onclick="fetchExploreData()">EXPLORE</li>
+         <li onclick="fetchAsyncData()">ASYNC</li>
+         <li onclick="fetchCarpoolData()">CARPOOL</li>
+         <li onclick="fetchNCASEData()">NCASE</li>
+         <li onclick="fetchTMLData()">TML</li>
+         <li onclick="fetchIBMProblemsData()">IBM PROBLEMS</li>
+       </ul>
+     </aside>
+     <!-- Content Section -->
+     <main class="content">
+       <div class="result-box">
+         <h2>Results</h2>
+         <p id="result">Click an item to display data.</p>
+ <!-- Dynamic Date and Time Input Section -->
+ <div id="date-input-section" style="display: none">
+   <h3>Select Start and End Date/Time for <span id="category-name"></span></h3>
+   <label for="start-date">Start Date and Time:</label>
+   <input type="datetime-local" id="start-date" placeholder="yyyy-MM-dd HH:mm:ss" />
+   <br />
+   <label for="end-date">End Date and Time:</label>
+   <input type="datetime-local" id="end-date" placeholder="yyyy-MM-dd HH:mm:ss" />
+   <br />
+   <button id="fetchLMSBtn" onclick="fetchLMSCount()" style="display: none;">Fetch LMS Count</button>
+   <button id="fetchFCMBtn" onclick="fetchFCMCount()" style="display: none;">Fetch FCM Count</button>          
+ </div>
+         <!-- Dynamic Data Container -->
+        <div id="data-container"></div>
+       </div>
+     </main>
+   </div>
+  <script src="Scriptss.js"></script>
+</body>
+</html>
